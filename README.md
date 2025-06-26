@@ -1,73 +1,127 @@
-# Welcome to your Lovable project
+# 📝 RBAC Blog Platform
 
-## Project info
+A full-stack blog application with **Role-Based Access Control (RBAC)** using **React.js**, **Node.js**, **Express**, and **MongoDB**. This project demonstrates secure authentication, role-based authorization, and dynamic blog management.
 
-**URL**: https://lovable.dev/projects/d0587137-a5e1-413c-ac19-fde509f0db1b
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- ✅ User & Admin roles with JWT authentication
+- 🧑‍💻 Role-based route access using middleware
+- 📚 Users can view blogs
+- 🛠️ Admins can create, update, and delete blog posts
+- 🔐 Passwords hashed with bcrypt
+- 🌐 Responsive frontend using React
+- 📄 MongoDB schema for users and blog posts
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d0587137-a5e1-413c-ac19-fde509f0db1b) and start prompting.
+## 🏗️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+**Frontend**:
+- React.js
+- Axios
+- React Router
 
-**Use your preferred IDE**
+**Backend**:
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT for authentication
+- bcrypt for password hashing
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🧩 Project Structure
 
-Follow these steps:
+pixel-blog-forge/
+├── backend/
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ ├── .env
+│ └── server.js
+├── frontend/
+│ ├── public/
+│ └── src/
+│ ├── pages/
+│ ├── components/
+│ └── App.jsx
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+yaml
+Copy
+Edit
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🔧 Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 1. Clone the repository
+```bash
+git clone https://github.com/anshitraj/blog-website.git
+cd blog-website
+2. Setup the backend
+bash
+Copy
+Edit
+cd backend
+npm install
+Create a .env file in backend/:
+
+ini
+Copy
+Edit
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+Start backend:
+
+bash
+Copy
+Edit
 npm run dev
-```
+3. Setup the frontend
+bash
+Copy
+Edit
+cd ../frontend
+npm install
+npm start
+The frontend will be running at http://localhost:3000
+The backend will be running at http://localhost:5000
 
-**Edit a file directly in GitHub**
+📘 API Endpoints
+Auth
+POST /api/signup – Register user
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+POST /api/login – Login and receive JWT
 
-**Use GitHub Codespaces**
+Blogs
+GET /api/posts – View all blog posts (public)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+POST /api/posts – Create post (admin only)
 
-## What technologies are used for this project?
+PUT /api/posts/:id – Edit post (admin only)
 
-This project is built with:
+DELETE /api/posts/:id – Delete post (admin only)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+📌 Roles
+Role	Permissions
+User	View posts
+Admin	Create, update, delete posts
 
-## How can I deploy this project?
+📩 Optional Features
+Email verification with Nodemailer (coming soon)
 
-Simply open [Lovable](https://lovable.dev/projects/d0587137-a5e1-413c-ac19-fde509f0db1b) and click on Share -> Publish.
+Rich text editing
 
-## Can I connect a custom domain to my Lovable project?
+Image uploads
 
-Yes, you can!
+Real-time updates (WebSocket)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🧑‍💻 Author
+Made by Anshit Raj
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📄 License
+MIT License
